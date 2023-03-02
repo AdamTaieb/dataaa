@@ -1,19 +1,20 @@
 import streamlit as st
 import requests
-# from streamlit_lottie import st_lottie
+from streamlit_lottie import st_lottie
+import streamlit_lottie
 
 
 
 st.set_page_config(page_title="Clothing Retailer", page_icon="👕", layout="wide")
 
-# def load_lottie(url):
-#     r = requests.get(url)
-#     if r.status_code != 200:
-#         return None
-#     return r.json()
+def load_lottie(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
 
-# # Load Assets
-# lottie_clothes = load_lottie("https://assets2.lottiefiles.com/packages/lf20_gn0tojcq.json")
+# Load Assets
+lottie_clothes = load_lottie("https://assets2.lottiefiles.com/packages/lf20_gn0tojcq.json")
 
 # Header Section
 with st.container():
@@ -42,8 +43,8 @@ with st.container():
         )
     st.write("[View Our Collection](http://localhost:8501/Shop)")
  
-#     with right_column:
-#         st_lottie(lottie_clothes, height=300, key="clothing")
+    with right_column:
+        st_lottie(lottie_clothes, height=300, key="clothing")
 
 
 # Section 4 - Latest Arrivals
@@ -59,21 +60,21 @@ with st.container():
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.image("/Users/adamtaieb/Desktop/yo/ayo/dress1.png", use_column_width=True)
+        st.image("https://cdn.pixabay.com/photo/2016/11/29/13/32/attractive-1868750_960_720.jpg", use_column_width=True)
         st.write("<h3 style='text-align: center;'>Womens Dress</h3>", unsafe_allow_html=True)
         st.write("<p style='text-align: center;'>$39.99</p>", unsafe_allow_html=True)
         if st.button("Add to Cart 1"):
             st.write("Item 1 added to cart!")
         
     with col2:
-        st.image("/Users/adamtaieb/Desktop/yo/ayo/shirt1.png", use_column_width=True)
+        st.image("https://cdn.pixabay.com/photo/2018/10/29/18/05/woman-3784052_960_720.jpg", use_column_width=True)
         st.write("<h3 style='text-align: center;'>Mens Shirt</h3>", unsafe_allow_html=True)
         st.write("<p style='text-align: center;'>$24.99</p>", unsafe_allow_html=True)
         if st.button("Add to Cart 2"):
             st.write("Item 2 added to cart!")
         
     with col3:
-        st.image("/Users/adamtaieb/Desktop/yo/ayo/coat4.png", use_column_width=True)
+        st.image("https://cdn.pixabay.com/photo/2016/02/19/11/25/model-1209787_960_720.jpg", use_column_width=True)
         st.write("<h3 style='text-align: center;'>Womens Jacket</h3>", unsafe_allow_html=True)
         st.write("<p style='text-align: center;'>$59.99</p>", unsafe_allow_html=True)
         if st.button("Add to Cart 3"):
